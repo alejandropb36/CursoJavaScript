@@ -1,3 +1,7 @@
+// strict sirve para hacer que escribas codigo lo mas correcto
+// que se pueda
+'use strict'
+
 // Variables
 /*
     Comentario varias lineas
