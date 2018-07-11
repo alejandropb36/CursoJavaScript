@@ -29,4 +29,10 @@ console.log(parseFloat(numero_cadena) + 24);
 
 console.log(String(numer_entero) + 23);
 
+// Como mostrar tipo de dato con typeof
+console.log(typeof numer_entero);
+console.log(typeof numero_cadena);
+console.log(typeof cadena_texto);
+console.log(typeof verdadero_o_falso);
+console.log(typeof numero_flotante);
 // Mensaje de prueba alert('Hola');
