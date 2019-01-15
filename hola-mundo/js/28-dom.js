@@ -6,6 +6,7 @@ function cambiaColor(color){
 	caja.style.background = color;
 }
 
+//Conseguir elementos con id en especifico
 //var caja = document.getElementById("micaja");
 var caja = document.querySelector("#micaja");
 var caja2 = caja;
@@ -20,24 +21,25 @@ caja.className = "hola cajas";
 
 console.log(caja);
 
+//Conseguir elementos por su etiqueta
 
-// Uso de DOM en javascript
+var todosLosDivs = document.getElementsByTagName('div');
 
+var contenidoEnTexto = todosLosDivs[2];
+contenidoEnTexto.innerHTML = "Otro texto ";
+contenidoEnTexto.style.background = "red";
 
-// Conseguir los elementos por Clase de css
-/*var divsAmarillos = document.getElementsByClassName('amarillo');
-var divsRojos = document.getElementsByClassName('rojo');
+var seccion = document.querySelector("#miseccion");
+var hr = document.createElement("hr");
 
-console.log(divsAmarillos);
+seccion.append(hr);
 
-divsAmarillos[0].style.background = "yellow";
-
-var div;
-for(div in divsRojos){
-	if(divsRojos[div].className == "rojo"){
-		console.log(divsRojos[div]);
-		divsRojos[div].style.background= "red";
-	}
+for (var valor in todosLosDivs){
+	if(typeof todosLosDivs[valor].textContent == "string"){
+		var parrafo = document.createElement("p");
+		var texto = document.createTextNode(todosLosDivs[valor].textContent);
+		parrafo.append(texto);
+		seccion.append(parrafo);
+	}	
 }
- 
-console.log(divsRojos);*/
+seccion.append(hr);
