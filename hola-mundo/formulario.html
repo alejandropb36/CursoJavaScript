@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Ejecicio Dom eventos y funciones</title>
+        <script type="text/javascript" src="js/32-ejercicio-dom.js"></script>
+        <style>
+            .box{
+               width: 250px;
+               height: 250px;
+               float: left;
+               margin: 20px;
+            }
+            .dashed{
+                border: 2px dashed black;
+
+            }
+        </style>
+    </head>
+    <body>
+        <!--
+            1. Formulario con los compos: Nombre, Apellido y Edad
+            2. Boton de enviar el formulario: evento submit.
+            3. Mostar datos por pantalla.
+            4. Tener un boton que al darle click nos muestra los datos actuales del formulario.
+         -->
+        <header>
+            <h1>Ejercicio Dom, Eventosy Funciones</h1>
+        </header>
+        <main>
+            <h2>Formulario</h2>
+
+            <div class="box">
+                <form action="" method="POST" id="formulario" onsubmit="return false;">
+                    <br>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+    
+                    <br>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido" id="apellido">
+    
+                    <br>
+                    <label for="edad">Edad</label>
+                    <input type="number" name="apellido" id="edad">
+    
+                    <br>
+                    <button type="submit" value="Enviar" id="submit">Submit</button>
+                </form>
+            </div>
+
+            <div class="box dashed">
+
+            </div>
+            
+        </main>
+    </body>
+</html>
