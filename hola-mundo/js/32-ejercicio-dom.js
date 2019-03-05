@@ -18,7 +18,25 @@
         console.groupCollapsed("Evento submit capturado!!");
         var nombre = document.querySelector("#nombre").value;
         var apellido = document.querySelector("#apellido").value;
-        var edad = document.querySelector("#edad").value;
+        var edad = parseInt(document.querySelector("#edad").value);
+
+        if(nombre.trim() == null || nombre.trim().length == 0)
+        {
+            alert("El nombre no es valido");
+            return false;
+        }
+
+        if(apellido.trim() == null || apellido.trim().length == 0)
+        {
+            alert("El apellido no es valido");
+            return false;
+        }
+
+        if(edad == null || edad >= 0 || isNaN(edad))
+        {
+            alert("La edad no es valida");
+            return false;
+        }
 
         box_dashed.style.display = "block";
 
