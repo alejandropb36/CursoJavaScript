@@ -20,6 +20,9 @@
         var apellido = document.querySelector("#apellido").value;
         var edad = parseInt(document.querySelector("#edad").value);
 
+        /**
+         * Validación del formulario
+         */
         if(nombre.trim() == null || nombre.trim().length == 0)
         {
             alert("El nombre no es valido");

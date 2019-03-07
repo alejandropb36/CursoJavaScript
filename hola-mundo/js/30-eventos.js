@@ -20,12 +20,14 @@ window.addEventListener('load', () => {
             boton.style.background = "green";
         }
         boton.style.padding = "15px";
-        boton.style.boder = "1px solid #ccc";
+        boton.style.border = "1px solid #ccc";
     }
 
     // click
     boton.addEventListener('click', function(){
         cambiarColor();
+        //boton.style.border = "10px solid black";
+        this.style.border = "10px solid black";
     });
 
 
