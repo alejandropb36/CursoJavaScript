@@ -18,6 +18,22 @@ $(document).ready(function() {
 
     $("#verde").css("background", "green")
                .css("color", "white");
+    
 
-    console.log(rojo);
+    // Selector de clases
+    var mi_clase = $('.zebra');
+
+    /**
+     * Para seleccionar se puede usa como un array corchetes
+     * [#] o el metodo .eq(#) que tiene mas metodos.
+     * console.log(mi_clase.eq(1));
+     */
+
+     mi_clase.css("padding", "5px");
+
+     $('.sin_borde').click(function() {
+         console.log("Le has dado click a un elemento");
+        $(this).addClass('zebra');
+     });
+    
 });
