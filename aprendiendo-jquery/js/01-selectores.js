@@ -49,5 +49,8 @@ $(document).ready(function() {
         }
     });
 
+    // Selectores de atributos
+    $('[title="Google"]').css("background", "#ccc");
+    $('[title="Facebook"]').css("background", "blue");
     
 });
