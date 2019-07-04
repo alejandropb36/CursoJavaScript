@@ -35,5 +35,19 @@ $(document).ready(function() {
          console.log("Le has dado click a un elemento");
         $(this).addClass('zebra');
      });
+
+    // Selectores de etiqueta
+    var parrafos = $('p').css("cursor", "pointer");
+
+    parrafos.click(function(){
+        var parrafo = $(this);
+        if(!parrafo.hasClass("grande")){
+            parrafo.addClass("grande");
+        }
+        else{
+            parrafo.removeClass("grande");
+        }
+    });
+
     
 });
