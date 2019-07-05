@@ -52,5 +52,17 @@ $(document).ready(function() {
     // Selectores de atributos
     $('[title="Google"]').css("background", "#ccc");
     $('[title="Facebook"]').css("background", "blue");
-    
+
+    // Otros
+    //$('p, a').addClass('margen-superior');
+
+
+    /**
+     * Find and Parent de jQuery
+     * Esto sirve para buscar y recorrer niveles de etiquetas
+     */
+    //var busqueda = $("#caja").find('.resaltado');
+    // var busqueda = $("#caja .resaltado").eq(0).parent().parent().parent().find('[title="Google"]')
+    var busqueda = $("#elemento2").parent().parent().find('.resaltado');
+    console.log(busqueda);
 });
