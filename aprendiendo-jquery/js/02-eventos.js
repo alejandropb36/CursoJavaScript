@@ -23,7 +23,7 @@ $(document).ready(function (){
 
     /**
      * Hover.
-     * 
+     * Hace lo mismo que los eventos pasados pero mas facil.
      */
     function cambiaRojo() {
         $(this).css('background', 'red');
@@ -34,4 +34,18 @@ $(document).ready(function (){
     }
 
     caja.hover(cambiaRojo, cambiaVerde);
+
+    /**
+     * Click y doble click
+     */
+    caja.click(function() {
+        $(this).css("background", "blue")
+                .css("color", "white");
+    });
+
+    caja.dblclick(function() {
+        $(this).css("background", "pink")
+                .css("color", "yellow");
+    });
+
 });
