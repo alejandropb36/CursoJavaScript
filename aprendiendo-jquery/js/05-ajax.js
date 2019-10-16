@@ -10,4 +10,22 @@ $(document).ready(function () {
             $("#datos").append(("<p>" + element.first_name + " " + element.last_name + "</p>"));
         });
     });
+
+    
+    $("#formulario").submit(function (e){
+        e.preventDefault();
+        var usuario = {
+            name: $('input[name="name"]').val(),
+            github: $('input[name="github"]').val()
+        };
+        console.log(usuario);
+        
+        $.post($(this).attr("action"), usuario, function(response) {
+            console.log(response);
+        }).done(function () {
+            alert("Usuario añadido correctamente!");
+        });
+
+        return false;
+    });
 });
