@@ -15,20 +15,22 @@ $(document).ready(function () {
 
     // slideToggle, fadeToggle y toggle
     $("#todoenuno").click(function () {
-        caja.fadeToggle('normal');
+        caja.fadeToggle('slow', function () {
+            console.log("FadeToggle finished!!");
+        });
     });
 
     $("#animar").click(function () {
 
         caja.animate({
-                        marginLeft: '500px',
-                        fontSize: '40px',
-                        height: '110px'
-                    }, 'slow')
+                marginLeft: '500px',
+                fontSize: '40px',
+                height: '110px'
+            }, 'slow')
             .animate({
-                        borderRadius: '900px',
-                        marginTop: '80px'
-                    }, 'slow')
+                borderRadius: '900px',
+                marginTop: '80px'
+            }, 'slow')
             .animate({
                 borderRadius: '0px',
                 marginLeft: '0px'
