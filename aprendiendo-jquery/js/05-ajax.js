@@ -20,10 +20,26 @@ $(document).ready(function () {
         };
         console.log(usuario);
         
-        $.post($(this).attr("action"), usuario, function(response) {
-            console.log(response);
-        }).done(function () {
-            alert("Usuario añadido correctamente!");
+        // $.post($(this).attr("action"), usuario, function(response) {
+        //     console.log(response);
+        // }).done(function () {
+        //     alert("Usuario añadido correctamente!");
+        // });
+
+        $.ajax({
+            type: "POST",
+            url: $(this).attr("action"),
+            data: usuario,
+            beforeSend: function() {
+                console.log("Enviando usuario ...");
+            },
+            success: function(response) {
+                console.log(response);
+            },
+            error: function() {
+                console.log("A ocurrido un error");
+            },
+            timeout: 2000
         });
 
         return false;
