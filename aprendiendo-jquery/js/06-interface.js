@@ -7,5 +7,12 @@ $(document).ready(function () {
     $(".elemento").resizable();
 
     // Seleccionar elementos
-    $(".lista-seleccionable").selectable();
+    //$(".lista-seleccionable").selectable();
+
+    // Ordenar los elementos
+    $(".lista-seleccionable").sortable({
+        update: function (event, ui) {
+            console.log("Ha cambiado la lista !!!");
+        }
+    });
 });
