@@ -29,5 +29,11 @@ $(document).ready(function () {
         $(".caja-efectos").effect("explode");
     });
 
+    // Tooltip
     $(document).tooltip();
+
+    // Dialog
+    $("#lanzar-popup").click(function () {
+        $("#popup").dialog();
+    });
 });
