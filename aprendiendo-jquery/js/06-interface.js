@@ -24,4 +24,8 @@ $(document).ready(function () {
         }
     });
 
+    // Efectos
+    $("#mostrar").click(function () {
+        $(".caja-efectos").effect("explode");
+    });
 });
