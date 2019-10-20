@@ -39,4 +39,7 @@ $(document).ready(function () {
 
     // Datapicker
     $("#calendario").datepicker();
+
+    // Tabs
+    $("#pestanas").tabs();
 });
