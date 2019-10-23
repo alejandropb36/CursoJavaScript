@@ -8,6 +8,16 @@
         <!-- Estilos CSS -->
         <link rel="stylesheet" href="css/style.css">
 
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        
+        <!-- Slider -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+        <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+        <!-- JavaScript -->
+        <script src="js/main.js" type="text/javascript"></script>
+
     </head>
     <body>
         <!-- Contenedor global -->
@@ -33,7 +43,13 @@
             </header>
 
             <!-- Slider -->
-            <div id="slider"></div>
+            <div id="slider">
+                <div class="bxslider">
+                    <div><img src="img/hojas.jpg" title="Hojas"></div>
+                    <div><img src="img/rojo.jpg" title="Rojo"></div>
+                    <div><img src="img/cielo.jpg" title="Cielo"></div>
+                </div>
+            </div>
 
             <!-- Contenido -->
             <section id="content">
@@ -91,9 +107,5 @@
         <footer>
             Master de JavaScript
         </footer>
-        
-        <!-- JavaScript -->
-        <script src="js/main.js"></script>
-
     </body>
 </html>
