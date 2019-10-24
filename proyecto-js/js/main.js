@@ -10,7 +10,7 @@ $(document).ready(function (){
     var posts = [
         {
             title: "Prueba de titulo 1",
-            date: moment().format("DD/MM/YYYY"),
+            date: moment('2019-07-24 09:16:00').format("DD/MM/YYYY"),
             content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget arcu eros. Maecenas eget sem non ipsum auctor egestas. Nulla convallis ipsum vel neque consequat, eget aliquet felis congue. Integer sit amet augue vitae purus faucibus sodales at ut tortor. Etiam ut sapien mauris. Integer nibh nunc, accumsan nec malesuada a, viverra nec risus. Nullam a felis pellentesque, consectetur risus a, feugiat dolor." 
         },
         {
@@ -52,5 +52,17 @@ $(document).ready(function (){
         $("#posts").append(post);
     });
 
-    
+    // Selector de tema
+    var theme = $("#theme");
+    $("#to-green").click(function () {
+        theme.attr("href", "css/green.css");
+    });
+
+    $("#to-red").click(function () {
+        theme.attr("href", "css/red.css");
+    });
+
+    $("#to-blue").click(function () {
+        theme.attr("href", "css/blue.css");
+    });
 });
