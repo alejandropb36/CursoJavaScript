@@ -40,17 +40,31 @@ $(document).ready(function (){
         }
     ];
 
-    posts.forEach((item,index) => {
-        var post = `
-            <article class="post">
-                <h2>${item.title}</h2>
-                <span class="date">${item.date}</span>
-                <p>${item.content}</p>
-                <a href="#" class="button-more">Leer más</a>
-            </article>
-        `;
-        $("#posts").append(post);
-    });
+    fetch("https://jsonplaceholder.typicode.com/posts?_limit=7")
+        .then((response) => {
+            console.log(response);
+            return response.json();
+        })
+        .then((posts) => {
+            console.log(posts);
+            posts.forEach((item,index) => {
+                var post = `
+                    <article class="post">
+                        <h2>${item.title}</h2>
+                        <span class="date">${moment().format("DD/MM/YYYY")}</span>
+                        <p>${item.body}</p>
+                        <a href="#" class="button-more">Leer más</a>
+                    </article>
+                `;
+                $("#posts").append(post);
+            });
+
+        })
+        .catch((error) => {
+            console.log(error.message);
+        });
+    
+    
 
     // Selector de tema
     var theme = $("#theme");
@@ -74,4 +88,24 @@ $(document).ready(function (){
         }, 500);
         return false;
     });
+
+    $("#login form").submit(() => {
+        var name = $("#name").val();
+        localStorage.setItem("name", name);
+    });
+
+    var name = localStorage.getItem("name");
+    if(name != null && name != "undefined"){
+        var aboutParrafo = $("#about p");
+        aboutParrafo.html("<strong>Bienvenido, " + name + "</strong>");
+        aboutParrafo.append("<a href='#' id='logout'>Cerrar sesión </a>");
+
+
+        $("#login form").hide();
+
+        $("#logout").click(() => {
+            localStorage.clear();
+            location.reload();
+        });
+    }
 });
