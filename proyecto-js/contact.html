@@ -18,6 +18,9 @@
         <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.theme.min.css">
         <script type="text/javascript" src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
 
+        <!-- jQuery From Validator -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
         <!-- JavaScript -->
         <script src="js/main.js" type="text/javascript"></script>
 
@@ -55,30 +58,34 @@
             <!-- Contenido -->
             <section id="content">
                 <div id="box">
-                    <!-- Acordeon -->
-                    <h2>Sobre mi</h2>
-                    <div id="acordeon">
-                        <h3>¿Quienes somos?</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget arcu eros.
-                        </p>
-                        <h3>A nu ma prro esto funciona</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget arcu eros.
-                        </p>
-                        <h3>Esto esta shido</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget arcu eros.
-                        </p>
-                        <h3>Chingue a su madre el America</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget arcu eros.
-                        </p>
-                        <h3>Ha prro trais el ornitrix</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget arcu eros.
-                        </p>
-                    </div>
+                    <!-- Formulario de contacto -->
+                    <h2>Contacto</h2>
+
+                    <form action="" id="form_contact" method="POST">
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" data-validation="alphanumeric">
+                        
+                        <label for="surname">Apellidos</label>
+                        <input type="text" name="surname" data-validation="alphanumeric">
+                        
+                        <label for="email">Email</label>
+                        <input type="email" name="email" data-validation="email">
+                        
+                        <label for="sex">Sexo</label>
+                        <select name="sex" id="sex" data-validation="required">
+                            <option value="man">Hombre</option>
+                            <option value="woman">Mujer</option>
+                        </select>
+                        
+                        <label for="date">Fecha nacimiento</label>
+                        <input type="text" name="date" data-validation="date" data-validation-format="dd-mm-yyyy">
+
+                        <label for="years">Edad</label>
+                        <input type="number" name="years" data-validation="number">
+
+                        <input type="submit" value="Enviar">
+                        
+                    </form>
                 </div>
                 
                 <aside id="sidebar">
