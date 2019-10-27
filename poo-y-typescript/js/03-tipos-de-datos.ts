@@ -1,7 +1,7 @@
 // string
-let cadena: string = "Alejandro ponce";
+let cadena: string | number = "Alejandro ponce";
 
-// cadena = 123;
+cadena = 123;
 
 console.log(cadena);
 

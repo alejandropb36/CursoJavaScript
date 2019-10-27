@@ -1,6 +1,6 @@
 // string
 var cadena = "Alejandro ponce";
-// cadena = 123;
+cadena = 123;
 console.log(cadena);
 // Number
 var numero = 12;
