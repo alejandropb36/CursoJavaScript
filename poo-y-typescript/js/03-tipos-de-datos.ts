@@ -36,3 +36,10 @@ console.log(lenguajes);
 
 let years: number[] = [1,2,3,4,5];
 console.log(years);
+
+// Tipo de dato personalizado
+type letrasNumeros = string | number;
+
+var miType : letrasNumeros[] = [123, "string"];
+
+console.log(miType);

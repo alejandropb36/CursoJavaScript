@@ -20,3 +20,5 @@ var lenguajes = ["PHP", "JS", "C#"];
 console.log(lenguajes);
 var years = [1, 2, 3, 4, 5];
 console.log(years);
+var miType = [123, "string"];
+console.log(miType);
