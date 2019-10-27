@@ -22,3 +22,12 @@ var years = [1, 2, 3, 4, 5];
 console.log(years);
 var miType = [123, "string"];
 console.log(miType);
+// let vs var
+var numero1 = 10;
+var numero2 = 12;
+if (numero1 == 10) {
+    var numero1_1 = 44;
+    var numero2 = 55;
+    console.log(numero1_1, numero2);
+}
+console.log(numero1, numero2);
