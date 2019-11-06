@@ -1,5 +1,3 @@
-"use strict";
-exports.__esModule = true;
 var Camiseta = /** @class */ (function () {
     function Camiseta(color, modelo, marca, precio) {
         this.color = color;
@@ -15,7 +13,6 @@ var Camiseta = /** @class */ (function () {
     };
     return Camiseta;
 }());
-exports.Camiseta = Camiseta;
 "";
 var camiseta = new Camiseta("Rojo", "Manga larga", "nike", 10);
 var playera = new Camiseta("Azul", "Manga marca", "nike", 10);

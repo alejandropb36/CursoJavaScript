@@ -1,4 +1,10 @@
-export class Camiseta {
+interface CamisetaBase{
+    setColor(color);
+    getColor();
+}
+
+
+class Camiseta implements CamisetaBase{
     private color: string;
     public modelo: string;
     public marca: string;
