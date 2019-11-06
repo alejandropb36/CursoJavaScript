@@ -4,6 +4,14 @@ interface CamisetaBase{
 }
 
 
+function estampar(logo: string){
+    return function(target: Function){
+        target.prototype.estampacion = function (): void {
+            console.log("Camiseta estampada con el logo de: " + logo);
+        }
+    }
+}
+@estampar('Gucci Gang')
 class Camiseta implements CamisetaBase{
     private color: string;
     public modelo: string;
@@ -49,6 +57,7 @@ var playera = new Camiseta("Azul", "Manga marca", "nike", 10);
 var sudadera = new Sudadera("Rojo", "Manga larga", "nike", 10);
 sudadera.setCapucha(true);
 sudadera.setColor("Jaspeadito");
+camiseta.estampacion();
 console.log(sudadera);
 
 console.log(camiseta);
