@@ -1,5 +1,9 @@
 var Camiseta = /** @class */ (function () {
-    function Camiseta() {
+    function Camiseta(color, modelo, marca, precio) {
+        this.color = color;
+        this.modelo = modelo;
+        this.marca = marca;
+        this.precio = precio;
     }
     Camiseta.prototype.setColor = function (color) {
         this.color = color;
@@ -9,15 +13,8 @@ var Camiseta = /** @class */ (function () {
     };
     return Camiseta;
 }());
-var camiseta = new Camiseta();
-camiseta.setColor("Rojo");
-camiseta.modelo = "Manga larga";
-camiseta.marca = "nike";
-camiseta.precio = 10;
-var playera = new Camiseta();
-playera.setColor("Azul");
-playera.modelo = "Manga corta";
-playera.marca = "nike";
-playera.precio = 10;
+"";
+var camiseta = new Camiseta("Rojo", "Manga larga", "nike", 10);
+var playera = new Camiseta("Azul", "Manga marca", "nike", 10);
 console.log(camiseta);
 console.log(playera);

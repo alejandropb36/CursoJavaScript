@@ -4,6 +4,12 @@ class Camiseta {
     public marca: string;
     public precio: number;
 
+    constructor(color, modelo, marca, precio){
+        this.color = color;
+        this.modelo = modelo;
+        this.marca = marca;
+        this.precio = precio;
+    }
 
     public setColor(color){
         this.color = color;
@@ -14,18 +20,10 @@ class Camiseta {
     }
 
 }
+""
+var camiseta = new Camiseta("Rojo", "Manga larga", "nike", 10);
 
-var camiseta = new Camiseta();
-camiseta.setColor("Rojo");
-camiseta.modelo= "Manga larga";
-camiseta.marca = "nike";
-camiseta.precio = 10;
-
-var playera = new Camiseta();
-playera.setColor("Azul");
-playera.modelo= "Manga corta";
-playera.marca = "nike";
-playera.precio = 10;
+var playera = new Camiseta("Azul", "Manga marca", "nike", 10);
 
 console.log(camiseta);
 console.log(playera);
