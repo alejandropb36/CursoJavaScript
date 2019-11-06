@@ -1,4 +1,4 @@
-class Camiseta {
+export class Camiseta {
     private color: string;
     public modelo: string;
     public marca: string;
