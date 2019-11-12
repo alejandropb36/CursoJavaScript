@@ -355,7 +355,10 @@
   <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>
 
-  <videojuego></videojuego>
+  <button (click)="ocultarVideojuegos(false)" *ngIf="mostrar_videojuegos">Ocultar Videojuegos</button>
+  <button (click)="ocultarVideojuegos(true)" *ngIf="!mostrar_videojuegos">Mostrar Videojuegos</button>
+
+  <videojuego *ngIf="mostrar_videojuegos"></videojuego>
   <zapatillas></zapatillas>
   <cursos></cursos>
 
