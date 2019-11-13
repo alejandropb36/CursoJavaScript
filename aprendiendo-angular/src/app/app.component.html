@@ -341,7 +341,7 @@
       </g>
     </svg>
 
-    <span>{{ title }} app is running!</span>
+    <span [ngStyle]="{'background': config.fondo}" >{{ title }} app is running!</span>
 
     
 
@@ -353,7 +353,7 @@
 
   <!-- Resources -->
   <h2>Resources</h2>
-  <p>Here are some links to help you get started:</p>
+  <p>{{descripcion}}</p>
 
   <button (click)="ocultarVideojuegos(false)" *ngIf="mostrar_videojuegos">Ocultar Videojuegos</button>
   <button (click)="ocultarVideojuegos(true)" *ngIf="!mostrar_videojuegos">Mostrar Videojuegos</button>
