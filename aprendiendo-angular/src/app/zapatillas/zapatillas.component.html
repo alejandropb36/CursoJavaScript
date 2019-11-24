@@ -1,7 +1,26 @@
 <h2>{{titulo}}</h2>
+<p>Compra las zapatillas de las mejores marcas
+    
+</p>
 <ul>
-    <li *ngFor="let zapatilla of deportivas">
-        {{zapatilla.nombre}} - <strong>{{ zapatilla.precio }}</strong>
+    <li *ngFor="let marca of marcas; let indice = index"> {{indice + ". " + marca}} </li>
+</ul>
+
+<p>Las zapatillas que tenemos disponibles son </p>
+<ul>
+    <li *ngFor="let zapatilla of zapatillas">
+        <span [ngStyle]="{
+            'text-decoration' : !zapatilla.stock ? 'line-through' : 'none'
+        }">
+            {{zapatilla.nombre}} - <strong>MXN $ {{ zapatilla.precio }}</strong>
+        </span>
+        <span [ngStyle]="{
+            'background' : !zapatilla.stock ? 'yellow' : 'transparent',
+            'font-weight' : !zapatilla.stock ? 'bold' : 'normal'
+        }" *ngIf="!zapatilla.stock">
+            ¡Sin Stock!
+        </span>
+
         <span *ngIf="zapatilla.precio <= 650" 
             [style.background]= "zapatilla.precio <= 650 ? 'green' : 'transparent'"
             [style.color]= "zapatilla.precio <= 650 ? 'white' : 'black'"
@@ -9,3 +28,4 @@
             !En Oferta!
         </span>
     </li>
+</ul>
