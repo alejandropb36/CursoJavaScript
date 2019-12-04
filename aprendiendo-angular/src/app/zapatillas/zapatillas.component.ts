@@ -64,4 +64,10 @@ export class ZapatillasComponent implements OnInit {
         }
     }
 
+    borrarMarca(indice)
+    {
+        // delete this.marcas[indice];
+        this.marcas.splice(indice, 1);
+    }
+
 }
