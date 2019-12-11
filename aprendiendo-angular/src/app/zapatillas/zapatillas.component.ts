@@ -70,4 +70,14 @@ export class ZapatillasComponent implements OnInit {
         this.marcas.splice(indice, 1);
     }
 
+    onBlur()
+    {
+        console.log("Haz salido del imput");
+    }
+
+    mostrarPalabra()
+    {
+        alert(this.mi_marca);
+    }
+
 }
