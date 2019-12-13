@@ -26,7 +26,15 @@
         <span [ngStyle]="{
             'text-decoration' : !zapatilla.stock ? 'line-through' : 'none'
         }">
-            {{zapatilla.nombre}} - <strong  [class.altoPrecio]="zapatilla.precio >= 650">MXN $ {{ zapatilla.precio }}</strong>
+            {{zapatilla.nombre}} - <strong  
+                                        [class.altoPrecio]="zapatilla.precio >= 650"
+                                        [ngClass]="{
+                                            'fondoRojo': zapatilla.precio > 650,
+                                            'subrayado': zapatilla.marca == 'Nike'
+                                        }"
+                                    >
+                                        MXN $ {{ zapatilla.precio }}
+                                    </strong>
         </span>
         <span [ngStyle]="{
             'background' : !zapatilla.stock ? 'yellow' : 'transparent',
