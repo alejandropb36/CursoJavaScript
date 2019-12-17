@@ -73,7 +73,15 @@
   <videojuego *ngIf="mostrar_videojuegos"></videojuego>
   <zapatillas></zapatillas>
   <cursos></cursos> -->
-
+  <nav>
+    <a [routerLink]="['/']">Home</a>
+    &nbsp;
+    <a [routerLink]="['/zapatillas']">Zapatillas</a>
+    &nbsp;
+    <a [routerLink]="['/cursos']">Cursos</a>
+    &nbsp;
+    <a [routerLink]="['/videojuegos']">Videojuegos</a>
+  </nav>
   <router-outlet></router-outlet>
 
   <!-- Terminal -->
