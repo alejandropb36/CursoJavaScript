@@ -296,3 +296,13 @@
       visibility: hidden;
     }
   }
+
+  .active{
+    border: 3px solid yellow;
+  }
+
+  .content-terminal{
+    color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+  }
