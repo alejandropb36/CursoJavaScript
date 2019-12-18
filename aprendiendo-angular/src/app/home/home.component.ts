@@ -16,8 +16,12 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  identificate() {
+  setIdentificado() {
     this.identificado = true;
+  }
+
+  unsetIdentificado() {
+    this.identificado = false;
   }
 
 }
