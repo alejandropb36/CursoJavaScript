@@ -15,6 +15,6 @@ export class PeticionesService {
     }
 
     getUser(userId: number) {
-        return this._http.get(this.url + 'api/user/' + userId);
+        return this._http.get(this.url + 'api/users/' + userId);
     }
 }
