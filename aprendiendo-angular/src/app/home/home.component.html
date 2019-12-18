@@ -1,1 +1,14 @@
-<p>home works!</p>
+<!-- Componente Home -->
+<div>
+    <h1>Pagina principal</h1>
+    <div *ngIf="identificado; else noIdentificado">
+        <h3>Estas identificado en la aplicacion</h3>
+    </div>
+
+    <ng-template #noIdentificado>
+        <p>No estas identificado, pulsa el boton para idenficarte</p>
+        <button (click)="identificate()">Identificate!</button>
+    </ng-template>    
+
+</div>
+<!-- Componente Home -->
