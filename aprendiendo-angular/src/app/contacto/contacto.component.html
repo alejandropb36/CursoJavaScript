@@ -1,0 +1,21 @@
+<h2>Contacto</h2>
+
+<form #formContacto="ngForm" (ngSubmit)="onSubmit()">
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" id="nombre" #nombre="ngModel" [(ngModel)]="contactoUsuario.nombre">
+    
+    <br>
+    <label for="apellidos">Apellidos</label>
+    <input type="text" name="apellidos" id="apellidos" #apellidos="ngModel" [(ngModel)]="contactoUsuario.apellidos">
+    
+    <br>
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" #email="ngModel" [(ngModel)]="contactoUsuario.email">
+    
+    <br>
+    <label for="mensaje">Mensaje</label>
+    <textarea name="mensaje" id="mensaje" cols="30" rows="10" #mensaje="ngModel" [(ngModel)]="contactoUsuario.mensaje"></textarea>
+    
+    <br>
+    <input type="submit" value="Enviar">
+</form>
