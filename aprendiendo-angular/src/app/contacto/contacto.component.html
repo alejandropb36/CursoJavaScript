@@ -1,21 +1,33 @@
 <h2>Contacto</h2>
 
-<form #formContacto="ngForm" (ngSubmit)="onSubmit()">
+<form #formContacto="ngForm" (ngSubmit)="onSubmit(formContacto)">
     <label for="nombre">Nombre</label>
-    <input type="text" name="nombre" id="nombre" #nombre="ngModel" [(ngModel)]="contactoUsuario.nombre">
+    <input type="text" name="nombre" id="nombre" #nombre="ngModel" [(ngModel)]="contactoUsuario.nombre" required pattern="[a-zA-Z]+">
+    <span *ngIf="nombre.touched && !nombre.valid">
+        Nombre no valido
+    </span>
     
     <br>
     <label for="apellidos">Apellidos</label>
-    <input type="text" name="apellidos" id="apellidos" #apellidos="ngModel" [(ngModel)]="contactoUsuario.apellidos">
+    <input type="text" name="apellidos" id="apellidos" #apellidos="ngModel" [(ngModel)]="contactoUsuario.apellidos" required pattern="[a-zA-Z]+">
+    <span *ngIf="apellidos.touched && !apellidos.valid">
+        Apellidos no validos
+    </span>
     
     <br>
     <label for="email">Email</label>
-    <input type="text" name="email" id="email" #email="ngModel" [(ngModel)]="contactoUsuario.email">
+    <input type="email" name="email" id="email" #email="ngModel" [(ngModel)]="contactoUsuario.email" required>
+    <span *ngIf="email.touched && !email.valid">
+        Email no valido
+    </span>
     
     <br>
     <label for="mensaje">Mensaje</label>
-    <textarea name="mensaje" id="mensaje" cols="30" rows="10" #mensaje="ngModel" [(ngModel)]="contactoUsuario.mensaje"></textarea>
+    <textarea name="mensaje" id="mensaje" cols="30" rows="10" #mensaje="ngModel" [(ngModel)]="contactoUsuario.mensaje" required></textarea>
+    <span *ngIf="mensaje.touched && !mensaje.valid">
+        Mensaje no valido
+    </span>
     
     <br>
-    <input type="submit" value="Enviar">
+    <input type="submit" value="Enviar"[disabled]="!formContacto.valid">
 </form>

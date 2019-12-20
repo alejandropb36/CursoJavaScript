@@ -11,16 +11,17 @@ export class ContactoComponent implements OnInit {
   public contactoUsuario: ContactoUsuario;
 
   constructor() {
-    this.contactoUsuario = new ContactoUsuario('Alejandro', 'Ponce', 'alexponce36@hotmail.com', 'Hola mundo desde angular');
+    this.contactoUsuario = new ContactoUsuario('', '', '', '');
     console.log(this.contactoUsuario);
    }
 
   ngOnInit() {
   }
 
-  onSubmit() {
+  onSubmit(form) {
     console.log("Evento submit lanzado");
     console.log(this.contactoUsuario);
+    form.reset();
   }
 
 }
