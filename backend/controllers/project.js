@@ -1,6 +1,7 @@
 'use strict'
 
 var Project = require('../models/project');
+var fs = require('fs');
 
 var controller = {
     home: function(req, res) {
@@ -139,25 +140,39 @@ var controller = {
             var filePath = req.files.image.path;
             var fileSplit = filePath.split('\\');
             var fileName = fileSplit[2];
+            var extSplit = fileName.split('\.');
+            var fileExt = extSplit[1];
+            var validExt = ['jpg', 'jpeg', 'png', 'gif'];
 
-            Project.findByIdAndUpdate(projectId, {image: fileName}, {new:true}, (err, projectUpdated) =>{
-                if(err) {
-                    return res.status(500).send({
-                        message: "La imagen no se ha subido"
+            if(validExt.includes(fileExt)){
+
+                Project.findByIdAndUpdate(projectId, {image: fileName}, {new:true}, (err, projectUpdated) =>{
+                    if(err) {
+                        return res.status(500).send({
+                            message: "La imagen no se ha subido"
+                        });
+                    }
+                    
+                    if(!projectUpdated) {
+                        return res.status(404).send({
+                            message: "No existe ese projecto"
+                        });
+                    }
+        
+                    return res.status(200).send({
+                        project: projectUpdated
                     });
-                }
-                
-                if(!projectUpdated) {
-                    return res.status(404).send({
-                        message: "No existe ese projecto"
-                    });
-                }
     
-                return res.status(200).send({
-                    project: projectUpdated
                 });
+            }
+            else {
+                fs.unlink(filePath, (err) =>{
+                    return res.status(400).send({
+                        message: "la extension no es valida"
+                    });
+                });
+            }
 
-            })
 
         }
         else{
