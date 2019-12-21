@@ -26,5 +26,11 @@ app.get('/test', (req, res) => {
     });
 });
 
+app.post('/test', (req, res) => {
+    console.log(req);
+    res.status(200).send({
+        message: 'Hola mundo desde mi api'
+    });
+});
 // Export
 module.exports = app;
