@@ -130,6 +130,42 @@ var controller = {
                 project: projectDeleted
             });
         });
+    },
+
+    uploadImage: function(req, res) {
+        var projectId = req.params.id;
+        var fileName = 'Sin imagen';
+        if(req.files){
+            var filePath = req.files.image.path;
+            var fileSplit = filePath.split('\\');
+            var fileName = fileSplit[2];
+
+            Project.findByIdAndUpdate(projectId, {image: fileName}, {new:true}, (err, projectUpdated) =>{
+                if(err) {
+                    return res.status(500).send({
+                        message: "La imagen no se ha subido"
+                    });
+                }
+                
+                if(!projectUpdated) {
+                    return res.status(404).send({
+                        message: "No existe ese projecto"
+                    });
+                }
+    
+                return res.status(200).send({
+                    project: projectUpdated
+                });
+
+            })
+
+        }
+        else{
+            return res.status(500).send({
+                files: "undefined"
+            });
+        }
+
     }
 };  
 
