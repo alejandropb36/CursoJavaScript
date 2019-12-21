@@ -43,6 +43,28 @@ var controller = {
                 project: projectStored
             });
         });   
+    },
+
+    getProject: function(req, res) {
+        var projectId = req.params.id;
+
+        Project.findById(projectId, (err, project) =>{
+            if(err) {
+                return res.status(500).send({
+                    message: "Erro al devolver los datos"
+                });
+            }
+
+            if(!project) {
+                return res.status(404).send({
+                    message: "No se encontro ningun proyecto con el ID " + projectId
+                });
+            }
+
+            return res.status(200).send({
+                project: project
+            });
+        });
     }
 };  
 
