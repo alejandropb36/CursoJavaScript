@@ -22,7 +22,7 @@ var controller = {
         project.name = params.name;
         project.description = params.description;
         project.category = params.category;
-        project.langs = params.langs;
+        project.lang = params.lang;
         project.year = params.year;
         project.image = null;
 
@@ -63,6 +63,26 @@ var controller = {
 
             return res.status(200).send({
                 project: project
+            });
+        });
+    },
+
+    getProjects: function(req, res) {
+        Project.find({}).exec((err, projects) => {
+            if(err) {
+                return res.status(500).send({
+                    message: "Erro al devolver los datos"
+                });
+            }
+            
+            if(!projects) {
+                return res.status(404).send({
+                    message: "No hay proyectos para mostrar"
+                });
+            }
+
+            return res.status(200).send({
+                projects
             });
         });
     }
