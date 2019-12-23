@@ -1,7 +1,14 @@
 <div class="container">
     <h2> {{title}} </h2>
 
-    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectFrom)">
+    <div class="message success" *ngIf="status == 'success'">
+        El proyecto se ha creado correctamente, puedes verlo aqui <a href="#"></a>
+    </div>
+    <div class="message failed" *ngIf="status == 'failed'">
+        Error al crear el proyecto
+    </div>
+
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
         <p>
             <label for="name">Nombre</label>
             <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required>
@@ -32,9 +39,9 @@
         </p>
 
         <p>
-            <label for="langs">Lenguajes Utilizados</label>
-            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required>
-            <span class="formError" *ngIf="langs.touched && !langs.valid">
+            <label for="lang">Lenguajes Utilizados</label>
+            <input type="text" name="lang" #lang="ngModel" [(ngModel)]="project.lang" required>
+            <span class="formError" *ngIf="lang.touched && !lang.valid">
                 Los lenguajes son obligatorios
             </span>
         </p>
