@@ -48,7 +48,7 @@
 
         <p>
             <label for="image">Imagen del proyecto</label>
-            <input type="file" name="image" #image="ngModel" [(ngModel)]="project.image" placeholder="Subir imagen del proyecto">
+            <input type="file" name="image" #image="ngModel" [(ngModel)]="project.image" placeholder="Subir imagen del proyecto" (change)="fileChangeEvent($event)">
         </p>
 
         <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid">
