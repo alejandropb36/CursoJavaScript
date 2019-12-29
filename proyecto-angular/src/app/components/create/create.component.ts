@@ -17,6 +17,7 @@ export class CreateComponent implements OnInit {
 
   public title: string;
   public project: Project;
+  public saveProject;
   public status: string;
   public filesToUpload: Array<File>;
 
@@ -41,6 +42,7 @@ export class CreateComponent implements OnInit {
             .then((result: any) => {
               this.status = 'success';
               console.log(result);
+              this.saveProject = result.project;
               form.reset();
             })
             .catch((error) =>{
