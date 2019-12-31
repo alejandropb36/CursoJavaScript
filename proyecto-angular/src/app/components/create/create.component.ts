@@ -38,17 +38,24 @@ export class CreateComponent implements OnInit {
       response => {
         if(response.project) {
           // Subir imagen
-          this._uploadService.makeFileRequest(Global.url + '/upload-image/' + response.project._id, [], this.filesToUpload, 'image')
-            .then((result: any) => {
-              this.status = 'success';
-              console.log(result);
-              this.saveProject = result.project;
-              form.reset();
-            })
-            .catch((error) =>{
-              console.log(error);
-              this.status = 'failed';
-            });
+          if(this.filesToUpload) {
+            this._uploadService.makeFileRequest(Global.url + '/upload-image/' + response.project._id, [], this.filesToUpload, 'image')
+              .then((result: any) => {
+                this.status = 'success';
+                console.log(result);
+                this.saveProject = result.project;
+                form.reset();
+              })
+              .catch((error) =>{
+                console.log(error);
+                this.status = 'failed';
+              });
+          }
+          else {
+            this.status = 'success';
+            this.saveProject = response.project;
+            form.reset();
+          }
         }
         else {
           this.status = 'failed';
