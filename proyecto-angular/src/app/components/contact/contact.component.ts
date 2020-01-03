@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare var $: any;
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -14,6 +16,12 @@ export class ContactComponent implements OnInit {
       e.preventDefault();
       $("header").css("background", "green")
                   .css("height", "50px");
+    });
+
+    $('.galeria').bxSlider({
+      mode: 'fade',
+      captions: true,
+      slideWidth: 600
     });
   }
 

@@ -16,6 +16,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
