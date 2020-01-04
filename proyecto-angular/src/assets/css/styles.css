@@ -219,7 +219,7 @@ form input[type=submit]:hover {
     color: black;
 }
 
-
+.button,
 .button-edit,
 .button-delete {
     width: 30%;

@@ -1,7 +1,19 @@
 <div class="container">
-    <div class="galeria">
-        <div><img src="assets/img/coffee1.jpg" title="Funky roots"></div>
-        <div><img src="assets/img/coffee2.jpg" title="The long and winding road"></div>
-        <div><img src="assets/img/coffee3.jpg" title="Happy trees"></div>
+    <h1>Contacto component</h1>
+
+    <br>
+    <br>
+    <br>
+    <label for=""> Tamaño del Slider: </label>
+    <input type="text" [(ngModel)]="widthSlider"/>
+    <button class="button" (click)="cargarSlider()">Cargar Slider</button>
+    <button class="button" (click)="resetSlider()">Resetear Slider</button>
+    <div *ngIf="anchuraSlider">
+        
+        <app-slider [anchura]="anchuraSlider"
+            [etiquetas]="captions"            
+        >
+        </app-slider>
     </div>
+
 </div>
