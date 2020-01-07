@@ -10,6 +10,7 @@ export class ContactComponent implements OnInit {
   public widthSlider: number;
   public anchuraSlider: number;
   public captions: boolean;
+  public autor: any;
 
   constructor() {
     this.captions = true;
@@ -25,5 +26,10 @@ export class ContactComponent implements OnInit {
 
   resetSlider() {
     this.anchuraSlider = null;
+  }
+
+  getAutor(event) {
+    console.log(event);
+    this.autor = event;
   }
 }

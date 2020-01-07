@@ -11,9 +11,14 @@
     <div *ngIf="anchuraSlider">
         
         <app-slider [anchura]="anchuraSlider"
-            [etiquetas]="captions"            
+            [etiquetas]="captions" 
+            (conseguirAutor)="getAutor($event)"          
         >
         </app-slider>
+    </div>
+
+    <div *ngIf="autor">
+        <strong>Autor: </strong> {{autor. nombre + " " + autor.website}}
     </div>
 
 </div>
